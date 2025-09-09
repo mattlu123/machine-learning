@@ -38,9 +38,9 @@ class AdamW:
         for W, g in grad_params: # i.e. [(W_param, g_param), (b, g_bias)]
             curr_state = self.get_state(W)
             curr_state['m'] = self.beta_1 * curr_state['m'] + (1 - self.beta_1) * g
-            print(curr_state['m'])
             curr_state['v'] = self.beta_2 * curr_state['v'] + (1 - self.beta_2) * (g ** 2)
-            print(curr_state['v'])
+            #print(curr_state['m'])
+            #print(curr_state['v'])
 
             m_hat = curr_state['m'] / (1 - self.beta_1 ** self.steps)
             v_hat = curr_state['v'] / (1 - self.beta_2 ** self.steps)

@@ -9,8 +9,10 @@ X_train = np.random.rand(5, 3)
 y = np.random.randn(5).reshape(-1, 1)
 model = NeuralNetwork(
     [len(X_train[0]), 3, 1], 
-    mse, 
-    mse_grad, 
+    mse,
+    mse_grad,
     optimizer,
     ["relu", "sigmoid"]
 )
+
+model.train(4, X_train, y)

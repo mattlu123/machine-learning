@@ -81,8 +81,6 @@ class NeuralNetwork():
                 # evaluate loss
                 loss = self.loss(output, y_b)
                 loss_grad = self.loss_grad(output, y_b)
-                for act in self.activations:
-                    print(act.get_activations)
 
                 # backprop
                 self.backward(loss_grad)
